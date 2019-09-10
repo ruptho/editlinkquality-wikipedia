@@ -19,8 +19,8 @@ def load_from_file_pickle(filename, path):
         return None
 
 
-def get_path(path, filename, ext, base_dir=BASE_DIR):
-    return "{}/{}/{}.{}".format(base_dir, path, filename, ext)
+def get_path(path, filename, ext='', base_dir=BASE_DIR):
+    return ('%s/%s/%s.%s' if ext is not '' else 's/%s/%s%s').format(base_dir, path, filename, ext)
 
 
 def normalize_article(article):
