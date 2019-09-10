@@ -1,2 +1,2 @@
 # editlinkquality-wikipedia
-Coming soon
+Coming soon - this repository is currently being cleaned up!
