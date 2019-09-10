@@ -3,6 +3,7 @@ import os
 import pickle
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+RAW_POSTFIX = '_feat_res'
 
 
 def save_to_file_pickle(object_to_save, filename, path=""):
@@ -30,3 +31,8 @@ def read_csv(filename, path, delimiter=',', escape=csv.QUOTE_MINIMAL):
     with open(get_path(path, filename, 'csv'), 'r', encoding='utf8') as csvfile:
         rows = list(csv.reader(csvfile, delimiter=delimiter, quoting=escape))
     return rows
+
+
+def get_article_files_pickle(path):
+    return [f[:-4] for f in os.listdir(path) if
+            f.endswith('.pkl') and not (f.endswith('_errors.pkl') or f.endswith(RAW_POSTFIX + '.pkl'))]
