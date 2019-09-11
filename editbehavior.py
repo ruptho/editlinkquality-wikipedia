@@ -147,26 +147,21 @@ def calculate_transition_probabilities(category_data, labels, matrix_indices=Non
     return cat_article_scores, category_scores
 
 
+def get_micro_and_macro_arrays(rf_categories, label_combs, dec=4):
+    rev_counts, macro_rows, micro_rows = [], [], []
+    for cat, values in rf_categories.items():
+        macro_row, micro_row = [cat], [cat]
+        for label in label_combs:
+            macro_row.append(round(values[KEY_MACRO_R][label], dec))
+            micro_row.append(round(values[KEY_MICRO_R][label], dec))
+        rev_counts.append([cat, values[KEY_REV_COUNT], values[KEY_ARTICLE_COUNT], round(values[KEY_REVSPERART], dec)])
+        macro_rows.append(macro_row)
+        micro_rows.append(micro_row)
+    return rev_counts, micro_rows, macro_rows
+
+
 def calculate_relative_frequencies(category_data, n=800):
-    cat_int, art_cat_int = {}, {}
+    rf_articles, rf_categories = {}, {}
     for category, articles in category_data.items():
-        print('Analyze %s' % category)
-        art_cat_int[category], cat_int[category] = relative_frequency_per_category(articles, n)
-    return art_cat_int, cat_int
-
-
-if __name__ == '__main__':
-    super_labels = ['Content', 'Format', 'WikiContext']
-    features, y_labels = None, None
-    random_forest = train_random_forest(features, y_labels)
-    path = 'data/articles'
-    folders = ['a', 'b', 'c', 'featured', 'good', 'cw']
-    category_dict = {}
-    for cat_folder in folders:
-        # this could be any article list you like
-        articles = utils.get_article_files_pickle(utils.get_path(path, cat_folder))
-        labeled_articles = label_article_folder(random_forest, articles, cat_folder, path)
-        category_dict[cat_folder] = labeled_articles
-
-    calculate_transition_probabilities(category_dict, super_labels)
-    calculate_relative_frequencies(category_dict)
+        rf_articles[category], rf_categories[category] = relative_frequency_per_category(articles, n)
+    return rf_articles, rf_categories

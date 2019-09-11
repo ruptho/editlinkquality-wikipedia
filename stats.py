@@ -2,7 +2,16 @@ from collections import defaultdict
 
 import numpy as np
 
-from editbehavior import get_label_combinations
+
+def load_counts_from_pkl(filename='cat_interaction_vals', path='data/articles'):
+    cat_data = file_utils.load_from_file_pickle(filename, path)
+    classes, interaction_counts, article_counts, revs_per_article = [], [], [], []
+    for cat, values in cat_data.items():
+        classes.append(cat)
+        interaction_counts.append(list(values['counts'].values())[:-3])
+        article_counts.append(values['articles'])
+        article_counts.append(values['revsPerArt'])
+    return classes, interaction_counts, article_counts, revs_per_article
 
 
 def permutation_test_frequency(rf_articles, labels):
@@ -36,10 +45,3 @@ def permutation_significance(ratios1, ratios2, draws=10000, stringent=True, two_
         delta_diff_comparison = np.less_equal(diff, delta) if stringent else np.less(diff, delta)
         n_larger = np.add(n_larger, delta_diff_comparison)
     return (n_larger / draws) * (2 if two_sided else 1)
-
-
-if __name__ == '__main__':
-    tp_articles, rf_articles = None, None  # see editbehavior.py
-    labels_combs = get_label_combinations(['Content', 'Format', 'WikiContext'])
-    tp_sig = permutation_test(tp_articles)
-    rf_sig = permutation_test_frequency(rf_articles, labels_combs)

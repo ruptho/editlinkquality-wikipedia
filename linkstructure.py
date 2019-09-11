@@ -1,7 +1,6 @@
 '''
 Processing pipeline for article links and metrics
 '''
-import csv
 from collections import defaultdict
 
 import networkx as nx
@@ -48,18 +47,3 @@ def build_graph_from_wikilinkgraphs(wikilinkgraphs):
     G = nx.DiGraph()
     G.add_edges_from(edges)
     return G
-
-
-if __name__ == '__main__':
-    # Optional postprocessing: resolve Wikipedia redirects and remove redirects (nodes with single outgoing link)
-    # could also skip this and only feed wikilinkgraphs to
-    wikilinkgraphs = resolve_redirects(
-        utils.read_csv('<Wikipedia redirects>.csv', 'data', escape=csv.QUOTE_ALL),
-        utils.read_csv('<WikiLinksGraph>.csv', 'data', delimiter='\t'))
-    G = build_graph_from_wikilinkgraphs(wikilinkgraphs)
-    # Specify which articles belong to which category - depends on current task
-    articles_per_category = None  # change this variable accordingly
-    # calculate example metric
-    out_degree_dict = {utils.normalize_article(k): deg for k, deg in G.out_degree().items()}
-    # use helper to pick apart article results per category
-    categories, outdegree_per_cat, not_found = order_metric_by_category(out_degree_dict, articles_per_category)
