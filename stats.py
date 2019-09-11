@@ -19,12 +19,12 @@ def permutation_test(article_class_values):
     for c1 in range(0, len(classes) - 1):
         for c2 in range(c1 + 1, len(classes)):
             ratios1, ratios2, class1, class2 = articles[c1], articles[c2], classes[c1], classes[c2]
-            p_array = permutation_signficance(np.asarray(ratios1), np.asarray(ratios2), two_sided=False)
+            p_array = permutation_significance(np.asarray(ratios1), np.asarray(ratios2), two_sided=False)
             p_values[(class1, class2)] = p_array
     return p_values
 
 
-def permutation_signficance(ratios1, ratios2, draws=10000, stringent=True, two_sided=True):
+def permutation_significance(ratios1, ratios2, draws=10000, stringent=True, two_sided=True):
     count1, n_larger, ratios, diff = \
         len(ratios1), np.zeros(ratios1.shape[1:]), np.concatenate([ratios1, ratios2]), np.abs(
             np.mean(ratios1, axis=0) - np.mean(ratios2, axis=0))
