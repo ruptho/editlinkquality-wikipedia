@@ -14,7 +14,9 @@ The following files exist:
   - Helper for reading/writing files as well as other utility functions
 - example.ipynb
   - Example iPython notebook on how components are supposed to be used, and in which order
-
+- pdf
+  - Folder containing the poster presented at ComplexNetworks'19
+  
 ---
 [1] Complex Networks 2019. The 8th International Conference on
 Complex Networks and their Applications. (https://www.complexnetworks.org/)
