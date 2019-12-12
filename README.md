@@ -1,4 +1,5 @@
 # On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia
+DOI: https://doi.org/10.1007/978-3-030-36683-4_20
 
 This repository contains Python Code for experiments conducted during creation of the paper "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia" by Thorsten Ruprechter, Tiago Santos, and Denis Helic, submitted to ComplexNetworks'19 [1].
 
