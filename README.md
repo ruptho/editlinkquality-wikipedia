@@ -1,3 +1,6 @@
+# Understanding and Predicting Edit War Articles on Wikipedia
+The current content of this repository reflects code used during the first iteration of the paper. We are currently updating and refactoring our code base and will update this repository momentarily. In addition, we are in the processes of preparing the dataset (4,800 article revision histories) for upload.
+
 # On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia
 DOI: https://doi.org/10.1007/978-3-030-36683-4_20
 
