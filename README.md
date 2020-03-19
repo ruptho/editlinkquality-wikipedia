@@ -7,7 +7,7 @@ The following files exist:
 - linkstructure.py
   - Postprocessing and example computation of link metrics for the WikiLinkGraphs dataset, generated using the framework by Consonni et al. [4]
 - regression.py
-  - Logistc Regression functions and configurations. Provides code for statistical control using statsmodels as well as logistic regression prediction experiments using scikit-learn
+  - Logistic regression functionality, provides code for statistical control using statsmodels as well as prediction experiments using scikit-learn
 - stats.py
   - Helper file for permutation tests to assess significance of results
 - util.py
