@@ -1,5 +1,5 @@
-# "Understanding and Predicting Edit War Articles on Wikipedia" and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia"
-This repository contains Python Code for experiments conducted during creation of the papers "Understanding and Predicting Edit War Articles on Wikipedia" and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia" by Thorsten Ruprechter, Tiago Santos, and Denis Helic, submitted to Applied Network Science Journal and ComplexNetworks'19 [1, 2]. Additionally, we prepared a dataset of 4,800 articles under https://zenodo.org/record/3716098.
+# "Relating Wikipedia Article Quality to Edit Behavior and Link Structure" and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia"
+This repository contains Python Code for experiments conducted during creation of the papers "Relating Wikipedia Article Quality to Edit Behavior and Link Structure" and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia" by Thorsten Ruprechter, Tiago Santos, and Denis Helic, submitted to the Applied Network Science Journal and ComplexNetworks'19 [1, 2]. Additionally, we prepared a dataset of 4941 articles under https://zenodo.org/record/3908191.
 
 The following files exist: 
 - editbehavior.py
@@ -18,7 +18,7 @@ The following files exist:
   - Folder containing the poster presented at ComplexNetworks'19
   
 ---
-[1] Ruprechter, Thorsten, Tiago Santos, and Denis Helic. "Understanding and Predicting Edit War Articles on Wikipedia." (Under Review)
+[1] Ruprechter, Thorsten, Tiago Santos, and Denis Helic. "Relating Wikipedia Article Quality to Edit Behavior and Link Structure." (Under Review)
 
 [2] Ruprechter, Thorsten, Tiago Santos, and Denis Helic. "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia." International Conference on Complex Networks and Their Applications. Springer, Cham, 2019.
 
