@@ -1,4 +1,5 @@
-# "Relating Wikipedia Article Quality to Edit Behavior and Link Structure" and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia"
+# Relating Wikipedia Article Quality to Edit Behavior and Link Structure
+## ... and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia"
 This repository contains Python Code for experiments conducted during creation of the papers "Relating Wikipedia Article Quality to Edit Behavior and Link Structure" and "On the Relation of Edit Behavior, Link Structure, and Article Quality on Wikipedia" by Thorsten Ruprechter, Tiago Santos, and Denis Helic, submitted to the Applied Network Science Journal and ComplexNetworks'19 [1, 2]. Additionally, we prepared a dataset of 4941 articles under https://zenodo.org/record/3908191.
 
 The following files exist: 
